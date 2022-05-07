@@ -19,7 +19,6 @@ export enum Difficulty {
 
 // // I want to modify the state that I get back. Because we have the correct answer in a separte property and incorrect answer in a separate array. I want to have them in the same array, because I want to map this array and create answers in the UI in the jsx. So its easier to have both in 1 array. 
 // // First grab the Question and add new property of answers of array of strings. This will use the types from Question and add the answer property to it.
-
 export type QuestionsState = Question & { answers: string[] };
 
 export const fetchQuizQuestions = async (amount: number, difficulty: Difficulty) => {
