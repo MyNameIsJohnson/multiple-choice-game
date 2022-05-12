@@ -52,12 +52,24 @@ const App = () => {
   // use question card Props as callback
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     // if game not over
-    // creste storage for users answer with event curent target's value
-    // create correct storage, set equal to questions at number of correct answer, i.g. check answer against correct answer
-    // if correct is true setScore to prev bang prev +1
-    // save answer in the array of answer object and pass in
-    // question: questions at number of question, answer, correct, correctAnswer: questions at number of correct_answer
-    // setUserAnswers to prev bang array of ...prev, answerObject
+    if ( !gameOver ){
+      // create storage for users answer with event curent target's value
+      const answer = e.currentTarget.value;
+      // create correct storage, set equal to questions at number of correct answer, i.g. check answer against correct answer
+      const correct = questions[number].correct_answer === answer;
+      // if correct is true setScore to prev arrow function prev +1
+      if ( correct ) setScore((prev) => prev + 1);
+      // save answer in the array of answer object and pass in
+      const answerObject = {
+        // question: questions at number of question, answer, correct, correctAnswer: questions at number of correct_answer
+        question: questions[number].question, 
+        answer, 
+        correct, 
+        correctAnswer: questions[number].correct_answer,
+      }
+      // setUserAnswers to prev arrow function array of ...prev, answerObject
+      setUserAnswers((prev) => [...prev, answerObject]);
+    }
   };
 
   const nextQuestion = () => {};
