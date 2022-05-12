@@ -72,7 +72,16 @@ const App = () => {
     }
   };
 
-  const nextQuestion = () => {};
+  const nextQuestion = () => {
+    // create nextQuestion to equal number + 1
+    const nextQuestion = number + 1; 
+    // if nextQuestion is equal to TOTAL_QUESTIONS, setGameOver to true, else setNumber to nextQuestion
+    if ( nextQuestion === TOTAL_QUESTIONS ){
+      setGameOver(true);
+    } else {
+      setNumber(nextQuestion)
+    }
+  };
 
   return (
     <div className="App">
