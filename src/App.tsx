@@ -5,7 +5,7 @@ import QuestionCard from "./components/QuestionCard";
 // Types
 import { Difficulty, QuestionsState } from "./API";
 
-// create object to be used in checkAnswer and export to QuestionCard Props for userAnswer
+// create a type object to be used in checkAnswer and export to QuestionCard Props for userAnswer
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -26,15 +26,27 @@ const App = () => {
   console.log(questions);
 
   const startQuiz = async () => {
+    // show screen loading on button start
     // setLoading to true
-    // setGameOver to false
+    setLoading(true);
+    // need to keep track if game is over, setGameOver to false
+    setGameOver(false);
     // declare newQuestions await fetchQuizQuestions
-    // TOTAL_QUESTIONS, Difficulty EASY
+    const newQuestions = await fetchQuizQuestions(
+      // TOTAL_QUESTIONS, Difficulty EASY
+      TOTAL_QUESTIONS, 
+      Difficulty.EASY);
+
     // setQuestions to newQuestions
+    setQuestions(newQuestions);
     // setScore to 0
+    setScore(0);
     // setUserAnswers to empty array
+    setUserAnswers([]);
     // setNumber to 0
+    setNumber(0);
     // setLoading to false
+    setLoading(false);
   };
 
   // use question card Props as callback
@@ -55,7 +67,7 @@ const App = () => {
       <h1>React Quiz</h1>
       {/* Conditional rendering */}
       {/* Only show button if gameOver OR userAnswers length is equal to TOTAL_QUESTIONS else render null*/}
-
+      
       <button className="start" onClick={startQuiz}>
         Start
       </button>
