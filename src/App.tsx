@@ -4,6 +4,7 @@ import { fetchQuizQuestions } from "./API";
 import QuestionCard from "./components/QuestionCard";
 // Types
 import { Difficulty, QuestionsState } from "./API";
+import { GlobalStyle, Wrapper } from "./App.styles";
 
 // create a type object to be used in checkAnswer and export to QuestionCard Props for userAnswer
 export type AnswerObject = {
@@ -84,44 +85,47 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1>React Quiz</h1>
-      {/* Conditional rendering */}
-      {/* Only show button if gameOver OR userAnswers length is equal to TOTAL_QUESTIONS else render null*/}
-      { gameOver || userAnwers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startQuiz}>
-          Start
-        </button>
-      ) : null }
+    <>
+      <GlobalStyle />
+        <Wrapper className="App">
+          <h1>React Quiz</h1>
+          {/* Conditional rendering */}
+          {/* Only show button if gameOver OR userAnswers length is equal to TOTAL_QUESTIONS else render null*/}
+          { gameOver || userAnwers.length === TOTAL_QUESTIONS ? (
+            <button className="start" onClick={startQuiz}>
+              Start
+            </button>
+          ) : null }
 
-      {/* Only show score if not gameOver else render null */}
-      { !gameOver ? <p className="score">Score:</p> : null }
-      
-      {/* Only show if loading  */}
-      { loading && <p className="loadingQuestions">Loading Questions ...</p>}
+          {/* Only show score if not gameOver else render null */}
+          { !gameOver ? <p className="score">Score:</p> : null }
+          
+          {/* Only show if loading  */}
+          { loading && <p className="loadingQuestions">Loading Questions ...</p>}
 
-      {/* Only show card if not loading && not gameOVer && */}
-      { !loading && !gameOver && (
-        <QuestionCard
-        questionNumber={number + 1}
-        totalQuestions={TOTAL_QUESTIONS}
-        question={questions[number].question}
-        answers={questions[number].answers}
-        userAnswer={userAnwers ? userAnwers[number] : undefined}
-        callback={checkAnswer}
-        />
-      )}
+          {/* Only show card if not loading && not gameOVer && */}
+          { !loading && !gameOver && (
+            <QuestionCard
+            questionNumber={number + 1}
+            totalQuestions={TOTAL_QUESTIONS}
+            question={questions[number].question}
+            answers={questions[number].answers}
+            userAnswer={userAnwers ? userAnwers[number] : undefined}
+            callback={checkAnswer}
+            />
+            )}
 
-      {/* Only show button if not gameOver && not loading && userAnswers length is equal to number + 1 && number not equal TOTAL_QUESTIONS - 1, else render null */}
-      { !gameOver && 
-        !loading && 
-        userAnwers.length === number + 1 && 
-        number !== TOTAL_QUESTIONS - 1 ? (
-        <button className="next" onClick={nextQuestion}>
-          Next Question
-        </button>
-      ) : null}
-    </div>
+          {/* Only show button if not gameOver && not loading && userAnswers length is equal to number + 1 && number not equal TOTAL_QUESTIONS - 1, else render null */}
+          { !gameOver && 
+            !loading && 
+            userAnwers.length === number + 1 && 
+            number !== TOTAL_QUESTIONS - 1 ? (
+              <button className="next" onClick={nextQuestion}>
+              Next Question
+            </button>
+          ) : null}
+        </Wrapper>
+    </>
   );
 };
 
