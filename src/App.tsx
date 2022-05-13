@@ -98,7 +98,7 @@ const App = () => {
           ) : null }
 
           {/* Only show score if not gameOver else render null */}
-          { !gameOver ? <p className="score">Score:</p> : null }
+          { !gameOver ? <p className="score">Score: {score} </p> : null }
           
           {/* Only show if loading  */}
           { loading && <p className="loadingQuestions">Loading Questions ...</p>}
