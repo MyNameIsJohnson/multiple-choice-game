@@ -5,29 +5,33 @@ import { AnswerObject } from "../App";
 import { Wrapper, ButtonWrapper } from "./QuestionCard.styles";
 
 type Props = {
-  question: string;
   answers: string[];
   // set callback type
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  // set type to AnswerObject and type separator '|' undefined
-  userAnswer: AnswerObject | undefined;
+  category: string;
+  question: string;
   questionNumber: number;
   totalQuestions: number;
+  // set userAnswer type to AnswerObject and type separator '|' undefined
+  userAnswer: AnswerObject | undefined;
 };
 
 const QuestionCard: React.FC<Props> = ({
-  question,
   answers,
   callback,
-  userAnswer,
+  category,
+  question,
   questionNumber,
   totalQuestions,
+  userAnswer,
 }) => {
   return (
     <Wrapper>
+      <p className="number">Category: {category}</p>
       <p className="number">
         Question: {questionNumber} / {totalQuestions}
       </p>
+
       <p className="question" dangerouslySetInnerHTML={{ __html: question }} />
       <div>
         {answers.map((answer) => (

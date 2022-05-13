@@ -32,8 +32,10 @@ const App = () => {
     setGameOver(false);
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.EASY
+      Difficulty.EASY,
+      ["book", "music", "film"]
     );
+    // create new fetch for each category
     setQuestions(newQuestions);
     setScore(0);
     setUserAnswers([]);
@@ -88,12 +90,13 @@ const App = () => {
         {loading && <p className="loadingQuestions">Loading Questions ...</p>}
         {!loading && !gameOver && (
           <QuestionCard
+            answers={questions[number].answers}
+            callback={checkAnswer}
+            category={questions[number].category}
+            question={questions[number].question}
             questionNumber={number + 1}
             totalQuestions={TOTAL_QUESTIONS}
-            question={questions[number].question}
-            answers={questions[number].answers}
             userAnswer={userAnwers ? userAnwers[number] : undefined}
-            callback={checkAnswer}
           />
         )}
         {!gameOver &&
