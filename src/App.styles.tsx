@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: url('/images/favicon.ico');
-    background-size: 900px;
+    // background-image: url('/images/favicon.ico');
+    // background-size: 900px;
     margin: 0;
     padding: 0 20px;
     display: flex;
