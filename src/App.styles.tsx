@@ -7,8 +7,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    // background-image: url('/images/favicon.ico');
-    // background-size: 900px;
+    background-image: url('/images/trivia.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0 20px;
     display: flex;
