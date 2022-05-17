@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: url('/images/trivia.png');
+    background-image: url('/images/gif.gif');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0;
