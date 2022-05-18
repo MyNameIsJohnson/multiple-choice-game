@@ -91,7 +91,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Wrapper className="App">
-        <h1>React Quiz</h1>
+        <h1>Let's See How Much You Know</h1>
         {/* Conditional rendering */}
         {/* Only show button if gameOver OR userAnswers length is equal to TOTAL_QUESTIONS else render null*/}
         {gameOver || userAnwers.length === TOTAL_QUESTIONS ? (

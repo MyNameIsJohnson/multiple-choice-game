@@ -32,7 +32,13 @@ export const Wrapper = styled.div`
   }
 
   .score {
-    color: black;
+    color: white;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid rgba(0 212 255); 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     font-size: 2rem;
     margin: 0;
   }
@@ -48,7 +54,7 @@ export const Wrapper = styled.div`
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #0085a3);
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
     margin: 20px;
   }
