@@ -1,4 +1,4 @@
-# [Multiple Choice Game]()
+# [Multiple Choice Game](https://multiple-choice-game.netlify.app/)
 
 ## Table of contents
 
@@ -25,6 +25,7 @@ This is a desktop game that has 10 questions to be answered totaling up to 100 p
 [Figma Project Here](https://www.figma.com/file/rsLvRwFrITR0HWb1zaeAv5/guessing-game?node-id=2%3A2)
 
 ### Screenshot
+![Capture](https://user-images.githubusercontent.com/38548029/169112466-0f5c60f3-d29a-4870-a033-60560b0fb85d.PNG)
 
 ### Links
 
@@ -44,6 +45,9 @@ This is a desktop game that has 10 questions to be answered totaling up to 100 p
 - [Typescript](https://typescript.com/)
 
 ### What I learned
+- In this project, I learned how to conditionally render content based on their state. I found this very exciting and enjoyed writing script that determines when certain components should be rendered. This gave me a better understanding of the user experience. 
+- I learned the basics of typescript and am leaning more on using typescript for future projects. I appreciate that this framework is very opinionated and helped me debug any errors that arise beforehand. 
+- I am very happy to learn how to have more control with my styling. Using conditional render of CSS in this project was mind blowing and a skill I will take to future projects. 
 
 ### Useful resources
 
