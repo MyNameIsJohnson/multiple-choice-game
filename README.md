@@ -1,4 +1,4 @@
-# [Multiple Choice Game](https://multiple-choice-game.netlify.app/)
+# [Multiple Choice Game]()
 
 ## Table of contents
 
@@ -39,7 +39,6 @@ This is a desktop game that has 10 questions to be answered totaling up to 100 p
 - Semantic HTML5 markup
 - Custom CSS components
 - CSS Flex Box
-- CSS Grid
 - [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
 - [Typescript](https://typescript.com/)
@@ -48,7 +47,6 @@ This is a desktop game that has 10 questions to be answered totaling up to 100 p
 - In this project, I learned how to conditionally render content based on their state. I found this very exciting and enjoyed writing script that determines when certain components should be rendered. This gave me a better understanding of the user experience. 
 - I learned the basics of typescript and am leaning more on using typescript for future projects. I appreciate that this framework is very opinionated and helped me debug any errors that arise beforehand. 
 - I am very happy to learn how to have more control with my styling. Using conditional render of CSS in this project was mind blowing and a skill I will take to future projects. 
-
 ### Useful resources
 
 - [React](https://reactjs.org/)
