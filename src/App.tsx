@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { fetchQuizQuestions } from "./API";
 // Components
 import QuestionCard from "./components/QuestionCard";
@@ -24,9 +24,12 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(questions);
+  // console.log(questions);
+  let audio = new Audio('/jeopardy.mp3');
 
   const startQuiz = async () => {
+    // start audio on click
+    audio.play();
     // show screen loading on button start
     // setLoading to true
     setLoading(true);
@@ -73,7 +76,7 @@ const App = () => {
       setUserAnswers((prev) => [...prev, answerObject]);
     }
   };
-
+  
   const nextQuestion = () => {
     // create nextQuestion to equal number + 1
     const nextQuestion = number + 1;
@@ -83,8 +86,10 @@ const App = () => {
     } else {
       setNumber(nextQuestion);
     }
-    let test = document.getElementsByClassName("App");
-    console.log(test);
+    audio.pause();
+    audio.play();
+
+
   };
 
   return (
