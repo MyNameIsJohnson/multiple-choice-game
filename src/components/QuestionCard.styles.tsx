@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
   .question {
     inline-size: 450px;
     overflowwrap: break-word;
+    height: 50px;
   }
 `;
 

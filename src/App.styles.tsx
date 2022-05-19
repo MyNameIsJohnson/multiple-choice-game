@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-// import BGImage from "./images/favicon.ico";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -26,23 +25,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  > p {
-    color: #fff;
-  }
-
-  .score {
-    color: white;
-    width: 200px;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px solid rgba(0 212 255); 
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    font-size: 2rem;
-    margin: 0;
-  }
-
+  
   h1 {
     font-family: Fascinate Inline;
     background-image: linear-gradient(180deg, #fff, #87f1ff);
@@ -57,6 +40,22 @@ export const Wrapper = styled.div`
     font-size: 50px;
     text-align: center;
     margin: 20px;
+  }
+
+  > p {
+    color: #fff;
+  }
+
+  .score {
+    color: white;
+    width: 200px;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0 212 255); 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    margin: 0;
   }
 
   .start,
@@ -76,6 +75,9 @@ export const Wrapper = styled.div`
   }
 
   #svg-spinner{
+    margin: 50px;
+    height: 200px;
+    width: 200px;
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 1.2s;
     -webkit-animation-name: rotate;
