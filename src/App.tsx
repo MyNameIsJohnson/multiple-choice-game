@@ -1,9 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { fetchQuizQuestions } from "./API";
 // Components
 import QuestionCard from "./components/QuestionCard";
 // Types
 import { Difficulty, QuestionsState } from "./API";
+// Styles
 import { GlobalStyle, Wrapper } from "./App.styles";
 
 // create a type object to be used in checkAnswer and export to QuestionCard Props for userAnswer
@@ -25,11 +26,13 @@ const App = () => {
   const [gameOver, setGameOver] = useState(true);
 
   // console.log(questions);
-  let audio = new Audio('/jeopardy.mp3');
+
+  const audio = (new Audio('/jeopardy.mp3'));
 
   const startQuiz = async () => {
     // start audio on click
     audio.play();
+
     // show screen loading on button start
     // setLoading to true
     setLoading(true);
@@ -52,6 +55,7 @@ const App = () => {
     setNumber(0);
     // setLoading to false
     setLoading(false);
+
   };
 
   // use question card Props as callback
@@ -75,6 +79,7 @@ const App = () => {
       // setUserAnswers to prev arrow function array of ...prev, answerObject
       setUserAnswers((prev) => [...prev, answerObject]);
     }
+    audio.pause()
   };
   
   const nextQuestion = () => {
@@ -83,13 +88,13 @@ const App = () => {
     // if nextQuestion is equal to TOTAL_QUESTIONS, setGameOver to true, else setNumber to nextQuestion
     if (nextQuestion === TOTAL_QUESTIONS) {
       setGameOver(true);
+      audio.pause()
+      console.log(gameOver)
     } else {
-      setNumber(nextQuestion);
+      setNumber(nextQuestion);      
+      audio.currentTime = 0; 
+      audio.play()
     }
-    audio.pause();
-    audio.play();
-
-
   };
 
   return (
@@ -141,10 +146,14 @@ const App = () => {
         !loading &&
         userAnwers.length === number + 1 &&
         number !== TOTAL_QUESTIONS - 1 ? (
+          <>
+
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
+          </>
         ) : null}
+
       </Wrapper>
     </>
   );

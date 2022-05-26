@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-image: url('/images/gif.gif');
+    // background-image: url('/images/giphy.gif');
+    // background-image: url('/images/walls.gif');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0;
