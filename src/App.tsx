@@ -7,11 +7,7 @@ import { Difficulty, QuestionsState } from "./API";
 // Styles
 import { GlobalStyle, Wrapper } from "./App.styles";
 
-<<<<<<< HEAD
-// create a type object to be used in checkAnswer and export to QuestionCard Props for userAnswer
-=======
 // create object to be used in checkAnswer and export to QuestionCard Props for userAnswer
->>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -32,11 +28,8 @@ const App = () => {
   // console.log(questions);
 
   const [audio] = useState(new Audio("/jeopardy.mp3"));
-<<<<<<< HEAD
-=======
   const [wrongSound] = useState(new Audio("/wrongSound.m4a"));
   const [correctSound] = useState(new Audio("/correctSound.wav"));
->>>>>>> 93323c46881635a0f0921f585e054e113a449801
 
   const startQuiz = async () => {
     // start audio on click
