@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   max-width: 1100px;
+<<<<<<< HEAD
   width: 500px;
   height: 400px;
+=======
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
   background: #ebfeff;
   border-radius: 10px;
   border: 2px solid #0085a3;
@@ -18,7 +21,10 @@ export const Wrapper = styled.div`
   .question {
     inline-size: 450px;
     overflowwrap: break-word;
+<<<<<<< HEAD
     height: 50px;
+=======
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
   }
 `;
 
@@ -46,7 +52,11 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
       correct
         ? "linear-gradient(90deg, #56FFA4, #59BC86)"
         : !correct && userClicked
+<<<<<<< HEAD
         ? "linear-gradient(90deg, #FF5656, #C16868)"
+=======
+        ? "black"
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
         : "linear-gradient(90deg, #56ccff, #6eafb4)"};
     border: 3px solid #ffffff;
     box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);

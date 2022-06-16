@@ -1,4 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
+<<<<<<< HEAD
+=======
+import BGImage from "./images/nattu-adnan-unsplash.jpg";
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -6,11 +10,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+<<<<<<< HEAD
     background-image: url('/images/gif.gif');
     // background-image: url('/images/giphy.gif');
     // background-image: url('/images/walls.gif');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+=======
+    background-size: cover;
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
     margin: 0;
     padding: 0 20px;
     display: flex;
@@ -27,7 +35,21 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< HEAD
   
+=======
+
+  > p {
+    color: #fff;
+  }
+
+  .score {
+    color: black;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
   h1 {
     font-family: Fascinate Inline;
     background-image: linear-gradient(180deg, #fff, #87f1ff);
@@ -39,11 +61,16 @@ export const Wrapper = styled.div`
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #0085a3);
+<<<<<<< HEAD
     font-size: 50px;
+=======
+    font-size: 70px;
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
     text-align: center;
     margin: 20px;
   }
 
+<<<<<<< HEAD
   > p {
     color: #fff;
   }
@@ -60,6 +87,8 @@ export const Wrapper = styled.div`
     margin: 0;
   }
 
+=======
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
   .start,
   .next {
     cursor: pointer;
@@ -75,6 +104,7 @@ export const Wrapper = styled.div`
   .start {
     max-width: 200px;
   }
+<<<<<<< HEAD
 
   #svg-spinner{
     margin: 50px;
@@ -113,4 +143,6 @@ export const Wrapper = styled.div`
       from {transform: rotate(0deg);}
       to {transform: rotate(360deg);}
   }  
+=======
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
 `;

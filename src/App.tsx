@@ -7,7 +7,11 @@ import { Difficulty, QuestionsState } from "./API";
 // Styles
 import { GlobalStyle, Wrapper } from "./App.styles";
 
+<<<<<<< HEAD
 // create a type object to be used in checkAnswer and export to QuestionCard Props for userAnswer
+=======
+// create object to be used in checkAnswer and export to QuestionCard Props for userAnswer
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -42,7 +46,8 @@ const App = () => {
     const newQuestions = await fetchQuizQuestions(
       // TOTAL_QUESTIONS, Difficulty EASY
       TOTAL_QUESTIONS,
-      Difficulty.EASY
+      Difficulty.EASY,
+      ["book", "music", "film"]
     );
 
     // setQuestions to newQuestions
@@ -98,6 +103,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
+<<<<<<< HEAD
       <Wrapper className="App">
         <h1>Let's See How Much You Know</h1>
         {/* Conditional rendering */}
@@ -148,15 +154,46 @@ const App = () => {
         )}
 
         {/* Only show button if not gameOver && not loading && userAnswers length is equal to number + 1 && number not equal TOTAL_QUESTIONS - 1, else render null */}
+=======
+      <Wrapper>
+        <h1>React Quiz</h1>
+
+        {gameOver || userAnwers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={startQuiz}>
+            Start
+          </button>
+        ) : null}
+
+        {!gameOver ? <p className="score">Score: {score}</p> : null}
+
+        {loading && <p className="loadingQuestions">Loading Questions ...</p>}
+        {!loading && !gameOver && (
+          <QuestionCard
+            answers={questions[number].answers}
+            callback={checkAnswer}
+            category={questions[number].category}
+            question={questions[number].question}
+            questionNumber={number + 1}
+            totalQuestions={TOTAL_QUESTIONS}
+            userAnswer={userAnwers ? userAnwers[number] : undefined}
+          />
+        )}
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
         {!gameOver &&
         !loading &&
         userAnwers.length === number + 1 &&
         number !== TOTAL_QUESTIONS - 1 ? (
+<<<<<<< HEAD
           <>
             <button className="next" onClick={nextQuestion}>
               Next Question
             </button>
           </>
+=======
+          <button className="next" onClick={nextQuestion}>
+            Next Question
+          </button>
+>>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
         ) : null}
       </Wrapper>
     </>
