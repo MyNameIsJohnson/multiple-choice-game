@@ -32,6 +32,11 @@ const App = () => {
   // console.log(questions);
 
   const [audio] = useState(new Audio("/jeopardy.mp3"));
+<<<<<<< HEAD
+=======
+  const [wrongSound] = useState(new Audio("/wrongSound.m4a"));
+  const [correctSound] = useState(new Audio("/correctSound.wav"));
+>>>>>>> 93323c46881635a0f0921f585e054e113a449801
 
   const startQuiz = async () => {
     // start audio on click
@@ -71,8 +76,14 @@ const App = () => {
       // create correct storage, set equal to questions at number of correct answer, i.g. check answer against correct answer
       const correct = questions[number].correct_answer === answer;
       // if correct is true setScore to prev arrow function prev +1
-      if (correct) setScore((prev) => prev + 1);
+      if (correct) {
+        setScore((prev) => prev + 1);
+        correctSound.play();
+      }
       // save answer in the array of answer object and pass in
+      if (!correct) {
+        wrongSound.play();
+      }
       const answerObject = {
         // question: questions at number of question, answer, correct, correctAnswer: questions at number of correct_answer
         question: questions[number].question,
@@ -189,11 +200,14 @@ const App = () => {
               Next Question
             </button>
           </>
+<<<<<<< HEAD
 =======
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
 >>>>>>> 5a4cc287be177f2ba35e975e617f5716db351705
+=======
+>>>>>>> 93323c46881635a0f0921f585e054e113a449801
         ) : null}
       </Wrapper>
     </>
